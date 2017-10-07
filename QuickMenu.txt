@@ -22,6 +22,8 @@ Libs/LibAddonMenu-2.0/controls/slider.lua
 Libs/LibAddonMenu-2.0/controls/texture.lua
 Libs/LibAddonMenu-2.0/controls/iconpicker.lua
 
+Global.lua
+AddonMenu.lua
 QuickMenu.xml
 QuickMenu.lua
 Bindings.xml
