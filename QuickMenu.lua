@@ -14,13 +14,14 @@ ZO_CreateStringId("SI_BINDING_NAME_QUICK_MENU", "Quick Menu")
 local function triggerAddonLoaded(eventCode, addonName)
   if  (addonName == QuickMenu.name) then
     EVENT_MANAGER:UnregisterForEvent(QuickMenu.name, EVENT_ADD_ON_LOADED);
-    QuickMenu.acctSavedVariables = ZO_SavedVars:NewAccountWide('QuickMenuSavedVars', 1.0, nil, QuickMenu.defaultAcctSettings)
+    QuickMenu.acctSavedVariables = ZO_SavedVars:NewAccountWide('QuickMenuSavedVars', 1.0, nil, QuickMenu.presets12)
 	QuickMenu.AddonMenuInit()
   end
 end
  
 function QuickMenu.ResetToDefaults()
-	QuickMenu.acctSavedVariables = QuickMenu.defaultAcctSettings	
+	QuickMenu.acctSavedVariables.slots = QuickMenu.presets12.slots
+	QuickMenu.acctSavedVariables.slotsCount = QuickMenu.presets12.slotsCount
 end
 
 function QuickMenu:CreateGamepadRadialMenu()
@@ -191,6 +192,11 @@ local KEYBOARD_INTERACT_ICONS =
         enabledNormal = "EsoUI/Art/HUD/radialIcon_cancel_up.dds",
         enabledSelected = "EsoUI/Art/HUD/radialIcon_cancel_up.dds",
     }, 
+	[SI_QUICKSLOTS_EMPTY] =
+    {
+        enabledNormal = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds",
+        enabledSelected = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds", 
+    }, 
 }
 
 
@@ -330,6 +336,11 @@ local GAMEPAD_INTERACT_ICONS =
         enabledNormal = "EsoUI/Art/HUD/Gamepad/gp_radialIcon_cancel_down.dds",
         enabledSelected = "EsoUI/Art/HUD/Gamepad/gp_radialIcon_cancel_down.dds", 
     }, 
+	[SI_QUICKSLOTS_EMPTY] =
+    {
+        enabledNormal = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds",
+        enabledSelected = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds", 
+    }, 
 }
 
 function QuickMenu:AddMenuEntry(text, icons, enabled, selectedFunction, errorReason)
@@ -367,26 +378,24 @@ function QuickMenu:StartInteraction()
 				
 				local enabled = true
 				local name = GetString(menuEntryId)
-				if menuEntryId == SI_MAIN_MENU_SKILLS then
+				if menuEntryId == SI_MAIN_MENU_SKILLS and IsInGamepadPreferredMode() then
 					if not GAMEPAD_SKILLS.categoryKeybindStripDescriptor then
 						--not initialized yet, make it disabled
 						enabled = false
 						name = string.format("%s\n(Need Open Manually First)", name)
 					end
 				end
-				self:AddMenuEntry(name, platformIcons[menuEntryId], enabled, SelectEntry(menuEntryId) )
+				if platformIcons[menuEntryId] then
+					self:AddMenuEntry(name, platformIcons[menuEntryId], enabled, SelectEntry(menuEntryId) )
+				else
+					self:AddMenuEntry(GetString(SI_QUICKSLOTS_EMPTY), platformIcons[SI_QUICKSLOTS_EMPTY], true, nil )
+				end
 			end
+			for i = 1, QuickMenu.acctSavedVariables.slotsCount do
+				AddMenuEntry(QuickMenu.acctSavedVariables.slots[i])
+			end
+			AddMenuEntry(SI_RADIAL_MENU_CANCEL_BUTTON) 
 			--[[
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[1])
-			AddMenuEntry(SI_RADIAL_MENU_CANCEL_BUTTON)
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[2])
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[3])
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[4])
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[5])
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[6])
-			AddMenuEntry(QuickMenu.acctSavedVariables.slots[7]) 
-			]]
-			
 			AddMenuEntry(SI_JOURNAL_MENU_QUESTS)
 			AddMenuEntry(SI_JOURNAL_MENU_CADWELLS_ALMANAC)
 			AddMenuEntry(SI_JOURNAL_MENU_LORE_LIBRARY)
@@ -396,18 +405,20 @@ function QuickMenu:StartInteraction()
 			AddMenuEntry(SI_MAIN_MENU_SKILLS) 
 			AddMenuEntry(SI_MAIN_MENU_CHAMPION) 
 			AddMenuEntry(SI_MAIN_MENU_MARKET) 
+			AddMenuEntry(SI_MAIN_MENU_INVENTORY)
 			AddMenuEntry(SI_MAIN_MENU_ALLIANCE_WAR) 
-			AddMenuEntry(SI_MAIN_MENU_MAP) 
-			
-			AddMenuEntry(SI_WINDOW_TITLE_FRIENDS_LIST)
-			--AddMenuEntry(SI_IGNORE_LIST_PANEL_TITLE)
+			AddMenuEntry(SI_MAIN_MENU_MAP)  
+			AddMenuEntry(SI_WINDOW_TITLE_FRIENDS_LIST) 
+			AddMenuEntry(SI_IGNORE_LIST_PANEL_TITLE) 
 			AddMenuEntry(SI_MAIN_MENU_GUILDS)
 			AddMenuEntry(SI_MAIN_MENU_MAIL)
 			AddMenuEntry(SI_MAIN_MENU_NOTIFICATIONS)
 			AddMenuEntry(SI_MAIN_MENU_GROUP)
 			AddMenuEntry(SI_MAIN_MENU_COLLECTIONS)
 			AddMenuEntry(SI_MAIN_MENU_ACTIVITY_FINDER) 
+			AddMenuEntry(SI_MAIN_MENU_CROWN_CRATES)
 			AddMenuEntry(SI_RADIAL_MENU_CANCEL_BUTTON)
+			]]--
 			
 			local menu = self:GetRadialMenu()
 			menu:Show()
@@ -442,5 +453,23 @@ end
 local function commandExec()
 end
  
-SLASH_COMMANDS["/qm"] = commandExec
+--== Slash command ==--
+function QuickMenu.cmd( text )
+	if text == nil then text = true end
+    LAM2:OpenToPanel(QUICKMENU_ADDONMENU) 
+	local addons = LAM2.addonList:GetChild(1)
+	if addons:GetNumChildren() ~= 0 then
+		for a=1,addons:GetNumChildren(),1 do 
+			if addons:GetChild(a):GetText() == QuickMenu.settingName then
+				addons:GetChild(a):SetSelected(true)
+				break
+			end	
+		end
+	end	
+	--Second time's the charm
+	if text then
+		zo_callLater(function()QuickMenu.cmd(false)end,500)
+	end
+end
+SLASH_COMMANDS["/qm"] = QuickMenu.cmd
 EVENT_MANAGER:RegisterForEvent(QuickMenu.name, EVENT_ADD_ON_LOADED, triggerAddonLoaded);  
