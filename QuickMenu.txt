@@ -1,7 +1,7 @@
 ## Title: RockingDice's QuickMenu
 ## APIVersion: 100020
 ## Author: RockingDice
-## Description: 
+## Description: Type "/qm" for settings
 ## Version: 1.00
 ## SavedVariables: QuickMenuSavedVars
 ## OptionalDependsOn: LibAddonMenu-2.0
