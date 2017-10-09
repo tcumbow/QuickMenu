@@ -73,10 +73,14 @@ function QuickMenu:StartInteraction()
 							local function CallbackSelectEntry()
 								local entry = platformIcons[entryId]
 								if entry then
-									if entry.scene then  
-										SCENE_MANAGER:Push(entry.scene)
-									elseif entry.scenegroup and entry.descriptor then
-										MAIN_MENU_KEYBOARD:ShowSceneGroup(entry.scenegroup, entry.descriptor)
+									if entry.callback then
+										entry.callback()
+									else
+										if entry.scene then  
+											SCENE_MANAGER:Push(entry.scene)
+										elseif entry.scenegroup and entry.descriptor then
+											MAIN_MENU_KEYBOARD:ShowSceneGroup(entry.scenegroup, entry.descriptor)
+										end
 									end
 								end
 							end 
@@ -85,6 +89,7 @@ function QuickMenu:StartInteraction()
 						
 						local enabled = true
 						local name = GetString(menuEntryId)
+						local callback = SelectEntry(menuEntryId)
 						if menuEntryId == SI_MAIN_MENU_SKILLS and IsInGamepadPreferredMode() then
 							if not GAMEPAD_SKILLS.categoryKeybindStripDescriptor then
 								--not initialized yet, make it disabled
@@ -100,7 +105,7 @@ function QuickMenu:StartInteraction()
 						end
 						
 						if platformIcons[menuEntryId] then
-							self:AddMenuEntry(name, platformIcons[menuEntryId], enabled, SelectEntry(menuEntryId) )
+							self:AddMenuEntry(name, platformIcons[menuEntryId], enabled, callback )
 						else
 							self:AddMenuEntry(GetString(SI_QUICKSLOTS_EMPTY), platformIcons[SI_QUICKSLOTS_EMPTY], true, nil )
 						end

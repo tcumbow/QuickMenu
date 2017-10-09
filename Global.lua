@@ -57,6 +57,8 @@ QuickMenu.menuChoices = {
 	SI_MAIN_MENU_COLLECTIONS,
 	SI_MAIN_MENU_ACTIVITY_FINDER,
 	SI_MAIN_MENU_CROWN_CRATES,
+	SI_GAME_MENU_LOGOUT,
+	SI_GAME_MENU_QUIT,
 }
  
 QuickMenu.menuChoicesShowNames = {}
@@ -211,6 +213,22 @@ QuickMenu.KEYBOARD_MENU_ENTRIES =
         enabledNormal = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds",
         enabledSelected = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds", 
     }, 
+	[SI_GAME_MENU_LOGOUT] =
+	{
+		callback = function()
+			ZO_Dialogs_ShowPlatformDialog("LOG_OUT")
+		end,
+        enabledNormal = "esoui/art/tutorial/menubar_voip_up.dds",
+        enabledSelected = "esoui/art/tutorial/menubar_voip_up.dds", 
+	},
+	[SI_GAME_MENU_QUIT] =
+	{
+		callback = function()
+			ZO_Dialogs_ShowDialog("QUIT")
+		end,
+        enabledNormal = "esoui/art/mainmenu/menubar_system_up.dds",
+        enabledSelected = "esoui/art/mainmenu/menubar_system_up.dds", 
+	}
 }
 
 
@@ -357,4 +375,20 @@ QuickMenu.GAMEPAD_MENU_ENTRIES =
         enabledNormal = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds",
         enabledSelected = "EsoUI/Art/Quickslots/quickslot_emptySlot.dds", 
     }, 
+	[SI_GAME_MENU_LOGOUT] =
+	{
+		callback = function()
+			ZO_Dialogs_ShowPlatformDialog("LOG_OUT")
+		end,
+        enabledNormal = "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds",
+        enabledSelected = "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", 
+	},
+	[SI_GAME_MENU_QUIT] =
+	{
+		callback = function()
+			ZO_Dialogs_ShowDialog("QUIT")
+		end,
+        enabledNormal = "esoui/art/tutorial/gamepad/gp_playermenu_icon_settings.dds",
+        enabledSelected = "esoui/art/menubar/gamepad/gp_playermenu_icon_settings.dds", 
+	}
 }
