@@ -1,6 +1,6 @@
 QuickMenu = {}; 
 QuickMenu.name = "QuickMenu";
-QuickMenu.version = "1.00";
+QuickMenu.version = "1.01";
 QuickMenu.settingName = "Quick Menu"
 QuickMenu.settingDisplayName = "RockingDice's QuickMenu"
 QuickMenu.author = "RockingDice"

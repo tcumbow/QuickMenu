@@ -2,7 +2,7 @@
 ## APIVersion: 100020
 ## Author: RockingDice
 ## Description: Type "/qm" for settings
-## Version: 1.00
+## Version: 1.01
 ## SavedVariables: QuickMenuSavedVars
 ## OptionalDependsOn: LibAddonMenu-2.0
 
