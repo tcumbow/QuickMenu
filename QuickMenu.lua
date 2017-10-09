@@ -264,6 +264,8 @@ local GAMEPAD_INTERACT_ICONS =
         scene = "gamepad_inventory_root",
         enabledNormal = "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_inventory.dds",
         enabledSelected = "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_inventory.dds", 
+		disabledNormal = "esoui/art/mainmenu/menuBar_inventory_disabled.dds",
+		disabledSelected = "esoui/art/mainmenu/menuBar_inventory_disabled.dds",
     }, 
 	[SI_MAIN_MENU_ALLIANCE_WAR] =
     {
@@ -385,6 +387,13 @@ function QuickMenu:StartInteraction()
 						name = string.format("%s\n(Need Open Manually First)", name)
 					end
 				end
+				if menuEntryId == SI_MAIN_MENU_INVENTORY and IsInGamepadPreferredMode() and not (BUI and BUI.Settings.Modules["Inventory"].m_enabled) then
+					if not GAMEPAD_INVENTORY.initialized then
+						enabled = false
+						name = string.format("%s\n(Need Open Manually First)", name)
+					end
+				end
+				
 				if platformIcons[menuEntryId] then
 					self:AddMenuEntry(name, platformIcons[menuEntryId], enabled, SelectEntry(menuEntryId) )
 				else
