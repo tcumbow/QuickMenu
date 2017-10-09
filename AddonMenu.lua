@@ -1,35 +1,10 @@
 
 local LAM = LibStub:GetLibrary("LibAddonMenu-2.0")
-local menuChoices = { 
-	SI_JOURNAL_MENU_QUESTS,
-	SI_JOURNAL_MENU_CADWELLS_ALMANAC,
-	SI_JOURNAL_MENU_LORE_LIBRARY,
-	SI_JOURNAL_MENU_ACHIEVEMENTS,
-	SI_JOURNAL_MENU_LEADERBOARDS,
-	SI_MAIN_MENU_CHARACTER,
-	SI_MAIN_MENU_SKILLS,
-	SI_MAIN_MENU_CHAMPION,
-	SI_MAIN_MENU_MARKET,
-	SI_MAIN_MENU_INVENTORY, 
-	SI_MAIN_MENU_ALLIANCE_WAR,
-	SI_MAIN_MENU_MAP,
-	SI_WINDOW_TITLE_FRIENDS_LIST,
-	SI_IGNORE_LIST_PANEL_TITLE,
-	SI_MAIN_MENU_GUILDS,
-	SI_MAIN_MENU_MAIL,
-	SI_MAIN_MENU_NOTIFICATIONS,
-	SI_MAIN_MENU_GROUP,
-	SI_MAIN_MENU_COLLECTIONS,
-	SI_MAIN_MENU_ACTIVITY_FINDER,
-	SI_MAIN_MENU_CROWN_CRATES,
-}
-
-local menuChoicesShowNames = {}
 
 function QuickMenu.AddonMenuInit()  
-	menuChoicesShowNames = {}
-	for k, v in ipairs(menuChoices) do
-		table.insert(menuChoicesShowNames, GetString(v))
+	QuickMenu.menuChoicesShowNames = {}
+	for k, v in ipairs(QuickMenu.menuChoices) do
+		table.insert(QuickMenu.menuChoicesShowNames, GetString(v))
 	end 
 	
 	local panelData =  {
@@ -57,13 +32,13 @@ function QuickMenu.AddonMenuInit()
 	}
 	--create slots dynamically 
 	
-	for i=1, #menuChoices do
+	for i=1, #QuickMenu.menuChoices do
 		local slotdata = {}
 		slotdata.type = "dropdown"
 		slotdata.name = string.format("Slot %d", i+1)
 		slotdata.scrollable = true
-		slotdata.choices = menuChoicesShowNames
-		slotdata.choicesValues = menuChoices
+		slotdata.choices = QuickMenu.menuChoicesShowNames
+		slotdata.choicesValues = QuickMenu.menuChoices
 		slotdata.getFunc = function()
 			return QuickMenu.acctSavedVariables.slots[i]
 		end
@@ -107,8 +82,8 @@ function QuickMenu.AddonMenuInit()
 					type = "button",
 					name = "All Entries",
 					func = function() 
-						QuickMenu.acctSavedVariables.slots = menuChoices
-						QuickMenu.acctSavedVariables.slotsCount = #menuChoices
+						QuickMenu.acctSavedVariables.slots = QuickMenu.menuChoices
+						QuickMenu.acctSavedVariables.slotsCount = #QuickMenu.menuChoices
 					end,
 					width = "full",
 				},
@@ -118,7 +93,7 @@ function QuickMenu.AddonMenuInit()
 			type = 'slider',
 			name = "Menu Items Count",
 			min = 2,
-			max = #menuChoices + 1,
+			max = #QuickMenu.menuChoices + 1,
 			getFunc = function()
 				return QuickMenu.acctSavedVariables.slotsCount + 1
 			end,
