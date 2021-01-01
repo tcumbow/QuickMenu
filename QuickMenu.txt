@@ -1,6 +1,6 @@
-## Title: RockingDice's QuickMenu
-## APIVersion: 100020
-## Author: RockingDice
+## Title: QuickMenu
+## APIVersion: 100033
+## Author: Tom Cumbow
 ## Description: Type "/qm" for settings
 ## Version: 1.02
 ## SavedVariables: QuickMenuSavedVars
