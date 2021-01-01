@@ -12,3 +12,4 @@ QuickMenu.xml
 QuickMenu.lua
 QuickMenu_API.lua
 Bindings.xml
+TfcExtension.lua
