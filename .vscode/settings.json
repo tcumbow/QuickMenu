@@ -162,7 +162,12 @@
         "GAMEPAD_INVENTORY",
         "LockCameraRotation",
         "RETICLE",
-        "QUICKMENU_ADDONMENU"
+        "QUICKMENU_ADDONMENU",
+        "GetNumActionLayers",
+        "GetActionLayerInfo",
+        "GetActionLayerCategoryInfo",
+        "GetActionInfo",
+        "CallSecureProtected"
     ],
     "cSpell.words": [
         "ADDONMENU",
@@ -176,8 +181,10 @@
         "Keybind",
         "LEADERBOARDS",
         "Lcolor",
+        "Modx",
         "QUICKMENU",
         "QUICKSLOTS",
+        "Rebindable",
         "Versione",
         "a",
         "about",
@@ -1046,5 +1053,8 @@
     ],
     "emeraldwalk.runonsave": {
     "commands": [{"cmd": "robocopy .\\QuickMenu A:\\QuickMenu /mir"}]
-    }
+    },
+    "Lua.diagnostics.disable": [
+        "unused-function"
+    ]
 }
