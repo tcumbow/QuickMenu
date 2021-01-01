@@ -167,7 +167,10 @@
         "GetActionLayerInfo",
         "GetActionLayerCategoryInfo",
         "GetActionInfo",
-        "CallSecureProtected"
+        "CallSecureProtected",
+        "GetNumBuffs",
+        "GetUnitBuffInfo",
+        "CancelBuff"
     ],
     "cSpell.words": [
         "ADDONMENU",
@@ -178,6 +181,7 @@
         "Dpad",
         "Dropdown's",
         "Gamepad",
+        "Grizzlys",
         "Ingame",
         "Keybind",
         "LEADERBOARDS",

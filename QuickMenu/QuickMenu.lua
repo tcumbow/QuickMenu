@@ -18,6 +18,7 @@ local function triggerAddonLoaded(eventCode, addonName)
 	QuickMenu.AddonMenuInit()
 	TfcQuickMenuBindDpadRight()
 	TfcQuickMenuExtraActions()
+	QuickMenu.ResetToDefaults() -- just until I get the right defaults finalized
   end
 end
  
