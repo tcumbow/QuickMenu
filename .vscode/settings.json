@@ -1030,5 +1030,8 @@
         "сайт",
         "сейчас",
         "этой"
-    ]
+    ],
+    "emeraldwalk.runonsave": {
+    "commands": [{"cmd": "robocopy .\\QuickMenu A:\\QuickMenu /mir"}]
+    }
 }
