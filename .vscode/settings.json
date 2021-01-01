@@ -170,7 +170,8 @@
         "CallSecureProtected",
         "GetNumBuffs",
         "GetUnitBuffInfo",
-        "CancelBuff"
+        "CancelBuff",
+        "JumpToGroupLeader"
     ],
     "cSpell.words": [
         "ADDONMENU",

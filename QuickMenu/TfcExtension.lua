@@ -46,7 +46,8 @@ end
 
 
 function TfcQuickMenuExtraActions ()
-    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "ReloadUI", "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", function() ReloadUI("ingame") end)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "Reload UI", "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", function() ReloadUI("ingame") end)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "DismissAllPets", "Dismiss All Pets", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_achievements.dds", DismissAllPets)
-    
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToLeader", "Travel To Group Leader", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", JumpToGroupLeader)
+
 end
