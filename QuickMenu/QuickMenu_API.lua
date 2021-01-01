@@ -23,7 +23,7 @@ function QuickMenu.RegisterKeyboardMenuEntry(addonName, entryKey, showName, icon
 		error("Please check your addon name, should be string type and not empty.")
 		return
 	end
-	entry = {
+	local entry = {
 		name = showName,
 		enabledNormal = icon,
 		enabledSelected = icon,
@@ -44,7 +44,7 @@ function QuickMenu.RegisterGamepadMenuEntry(addonName, entryKey, showName, icon,
 		error("Please check your addon name, should be string type and not empty.")
 		return
 	end
-	entry = {
+	local entry = {
 		name = showName,
 		enabledNormal = icon,
 		enabledSelected = icon,
