@@ -149,7 +149,20 @@
         "TEX_MODE_WRAP",
         "ZO_ObjectPool",
         "EVENT_GLOBAL_MOUSE_UP",
-        "LibAddonMenu2"
+        "LibAddonMenu2",
+        "ZO_CreateStringId",
+        "ZO_SavedVars",
+        "ZO_RadialMenu",
+        "QuickMenu_Gamepad",
+        "QuickMenu_Keyboard",
+        "IsInGamepadPreferredMode",
+        "MAIN_MENU_KEYBOARD",
+        "GAMEPAD_SKILLS",
+        "BUI",
+        "GAMEPAD_INVENTORY",
+        "LockCameraRotation",
+        "RETICLE",
+        "QUICKMENU_ADDONMENU"
     ],
     "cSpell.words": [
         "ADDONMENU",
