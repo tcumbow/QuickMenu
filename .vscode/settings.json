@@ -173,7 +173,11 @@
         "CancelBuff",
         "JumpToGroupLeader",
         "GetDisplayName",
-        "JumpToFriend"
+        "JumpToFriend",
+        "IsUnitGrouped",
+        "GroupLeave",
+        "GroupDisband",
+        "IsUnitGroupLeader"
     ],
     "cSpell.words": [
         "ADDONMENU",

@@ -56,10 +56,25 @@ local function TravelToSpouse()
     JumpToFriend(GetSpouseName())
 end
 
+local function LeaveGroup()
+	if IsUnitGrouped("player") then
+		GroupLeave()
+	end
+end
+
+local function LeaveDisbandGroup()
+    if IsUnitGrouped("player") and IsUnitGroupLeader("player") then
+        GroupDisband()
+    else
+        LeaveGroup()
+    end
+end
+
 function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "Reload UI", "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", function() ReloadUI("ingame") end)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "DismissAllPets", "Dismiss All Pets", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_achievements.dds", DismissAllPets)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToLeader", "Travel To Group Leader", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", JumpToGroupLeader)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_contacts.dds", TravelToSpouse)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_emotes.dds", LeaveDisbandGroup)
 
 end
