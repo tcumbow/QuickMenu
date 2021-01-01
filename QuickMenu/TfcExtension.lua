@@ -15,3 +15,7 @@ local function BindSpecial (desiredActionName, keyCode)
     end
 end
 
+function TfcQuickMenuBindDpadRight ()
+    BindSpecial("QUICK_MENU",179)
+    BindSpecial("QUICK_MENU",126)
+end
