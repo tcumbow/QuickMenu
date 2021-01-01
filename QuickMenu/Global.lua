@@ -20,7 +20,7 @@ QuickMenu.presets8 = {
  
 QuickMenu.presets12 = { 
 	slots = {
-		[1] = SI_MAIN_MENU_INVENTORY,
+		[1] = "TfcExtension(ReloadUI)",
 		[2] = SI_MAIN_MENU_SKILLS,
 		[3] = SI_MAIN_MENU_GROUP,
 		[4] = SI_MAIN_MENU_ACTIVITY_FINDER,
