@@ -171,7 +171,9 @@
         "GetNumBuffs",
         "GetUnitBuffInfo",
         "CancelBuff",
-        "JumpToGroupLeader"
+        "JumpToGroupLeader",
+        "GetDisplayName",
+        "JumpToFriend"
     ],
     "cSpell.words": [
         "ADDONMENU",

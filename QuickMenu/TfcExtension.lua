@@ -44,10 +44,22 @@ function PetDismiss:DismissPet(petList)
 	end
 end
 
+local function GetSpouseName()
+    MyName = GetDisplayName()
+    if MyName=="@Tommy.C" then return "@Samantha.C" end
+    if MyName=="@Samantha.C" then return "@Tommy.C" end
+    if MyName=="@Phrosty1" then return "@Jenniami" end
+    if MyName=="@Jenniami" then return "@Phrosty1" end
+end
+
+local function TravelToSpouse()
+    JumpToFriend(GetSpouseName())
+end
 
 function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "Reload UI", "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", function() ReloadUI("ingame") end)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "DismissAllPets", "Dismiss All Pets", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_achievements.dds", DismissAllPets)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToLeader", "Travel To Group Leader", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", JumpToGroupLeader)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", TravelToSpouse)
 
 end
