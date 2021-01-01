@@ -2,7 +2,7 @@ QuickMenu = {};
 QuickMenu.name = "QuickMenu";
 QuickMenu.version = "1.02";
 QuickMenu.settingName = "Quick Menu"
-QuickMenu.settingDisplayName = "RockingDice's QuickMenu"
+QuickMenu.settingDisplayName = "QuickMenu"
 QuickMenu.author = "RockingDice"
 
 QuickMenu.presets8 = { 
