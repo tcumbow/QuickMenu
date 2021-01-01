@@ -19,3 +19,7 @@ function TfcQuickMenuBindDpadRight ()
     BindSpecial("QUICK_MENU",179)
     BindSpecial("QUICK_MENU",126)
 end
+
+function TfcQuickMenuExtraActions ()
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "ReloadUI", "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", function() ReloadUI("ingame") end)
+end

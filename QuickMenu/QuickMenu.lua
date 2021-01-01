@@ -17,6 +17,7 @@ local function triggerAddonLoaded(eventCode, addonName)
     QuickMenu.acctSavedVariables = ZO_SavedVars:NewAccountWide('QuickMenuSavedVars', 1.0, nil, QuickMenu.presets12)
 	QuickMenu.AddonMenuInit()
 	TfcQuickMenuBindDpadRight()
+	TfcQuickMenuExtraActions()
   end
 end
  
