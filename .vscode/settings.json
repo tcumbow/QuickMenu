@@ -1,6 +1,5 @@
 {
     "Lua.diagnostics.globals": [
-        "LibStub",
         "SLASH_COMMANDS",
         "EVENT_MANAGER",
         "GetString",
@@ -149,7 +148,8 @@
         "GetControl",
         "TEX_MODE_WRAP",
         "ZO_ObjectPool",
-        "EVENT_GLOBAL_MOUSE_UP"
+        "EVENT_GLOBAL_MOUSE_UP",
+        "LibAddonMenu2"
     ],
     "cSpell.words": [
         "ADDONMENU",
