@@ -388,7 +388,7 @@ QuickMenu.GAMEPAD_MENU_ENTRIES =
 		callback = function()
 			ZO_Dialogs_ShowDialog("QUIT")
 		end,
-        enabledNormal = "esoui/art/tutorial/gamepad/gp_playermenu_icon_settings.dds",
-        enabledSelected = "esoui/art/menubar/gamepad/gp_playermenu_icon_settings.dds", 
+        enabledNormal = "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds",
+        enabledSelected = "esoui/art/menubar/gamepad/gp_playermenu_icon_logout.dds", 
 	}
 }
