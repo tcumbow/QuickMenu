@@ -356,8 +356,8 @@ QuickMenu.GAMEPAD_MENU_ENTRIES =
 	[SI_MAIN_MENU_ACTIVITY_FINDER] =
     {
         scene = "gamepad_activity_finder_root",
-        enabledNormal = "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_activityFinder.dds",
-        enabledSelected = "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_activityFinder.dds", 
+        enabledNormal = "EsoUI/Art/LFG/Gamepad/gp_LFG_menuIcon_Dungeon.dds",
+        enabledSelected = "EsoUI/Art/LFG/Gamepad/gp_LFG_menuIcon_Dungeon.dds", 
     }, 
 	[SI_MAIN_MENU_CROWN_CRATES] =
     {
