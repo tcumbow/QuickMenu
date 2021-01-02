@@ -355,7 +355,7 @@ QuickMenu.GAMEPAD_MENU_ENTRIES =
     }, 
 	[SI_MAIN_MENU_ACTIVITY_FINDER] =
     {
-        scene = "gamepad_activity_finder_root",
+        scene = "gamepadDungeonFinder",
         enabledNormal = "EsoUI/Art/LFG/Gamepad/gp_LFG_menuIcon_Dungeon.dds",
         enabledSelected = "EsoUI/Art/LFG/Gamepad/gp_LFG_menuIcon_Dungeon.dds", 
     }, 
