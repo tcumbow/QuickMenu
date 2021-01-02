@@ -75,6 +75,6 @@ function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "DismissAllPets", "Dismiss All Pets", "esoui/art/emotes/gamepad/gp_emoteicon_emotion.dds", DismissAllPets)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToLeader", "Travel To Group Leader", "esoui/art/unitframes/gamepad/gp_group_leader.dds", JumpToGroupLeader)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_contacts.dds", TravelToSpouse)
-    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_emotes.dds", LeaveDisbandGroup)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "esoui/art/menubar/gamepad/gp_playermenu_icon_character.dds", LeaveDisbandGroup)
 
 end
