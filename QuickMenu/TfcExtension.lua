@@ -74,6 +74,10 @@ local function LeaveDisbandGroup()
     end
 end
 
+local function GroupUp()
+    GroupStart.InviteGroupByMethod()
+end
+
 function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "ReloadUI", "Reload UI", "esoui/art/menubar/gamepad/gp_playermenu_icon_submitfeedback.dds", function() ReloadUI("ingame") end)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "DismissAllPets", "Dismiss All Pets", "esoui/art/emotes/gamepad/gp_emoteicon_emotion.dds", DismissAllPets)
@@ -81,5 +85,6 @@ function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_contacts.dds", TravelToSpouse)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "esoui/art/menubar/gamepad/gp_playermenu_icon_character.dds", LeaveDisbandGroup)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToRM", "Travel To Reaper's March", "esoui/art/menubar/gamepad/gp_playermenu_icon_inventory.dds", TravelToRM)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "GroupUp", "Group Up", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", GroupUp)
 
 end
