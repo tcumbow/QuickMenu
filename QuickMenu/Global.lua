@@ -21,16 +21,16 @@ QuickMenu.presets8 = {
 QuickMenu.presets12 = { 
 	slots = {
 		[1] = "TfcExtension(ReloadUI)",
-		[2] = "TfcExtension(DismissAllPets)",
-		[3] = SI_MAIN_MENU_GROUP,
-		[4] = SI_MAIN_MENU_ACTIVITY_FINDER,
-		[5] = SI_MAIN_MENU_MAIL, --
-		[6] = SI_JOURNAL_MENU_QUESTS,
-		[7] = SI_GAME_MENU_QUIT,
-		[8] = "TfcExtension(TravelToSpouse)",
-		[9] = "TfcExtension(TravelToLeader)",
-		[10] = "TfcExtension(LeaveDisbandGroup)",
-		[11] = SI_JOURNAL_MENU_ACHIEVEMENTS,
+		[10] = "TfcExtension(DismissAllPets)",
+		[5] = SI_MAIN_MENU_GROUP,
+		[6] = SI_MAIN_MENU_ACTIVITY_FINDER,
+		[9] = SI_MAIN_MENU_MAIL, --
+		[7] = SI_JOURNAL_MENU_QUESTS,
+		[11] = SI_GAME_MENU_QUIT,
+		[3] = "TfcExtension(TravelToSpouse)",
+		[4] = "TfcExtension(TravelToLeader)",
+		[2] = "TfcExtension(LeaveDisbandGroup)",
+		[8] = SI_JOURNAL_MENU_ACHIEVEMENTS,
 	},
 	slotsCount = 11
 }
