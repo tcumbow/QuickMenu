@@ -179,7 +179,8 @@
         "GroupDisband",
         "IsUnitGroupLeader",
         "Teleporter",
-        "GroupStart"
+        "GroupStart",
+        "ExitInstanceImmediately"
     ],
     "cSpell.words": [
         "ADDONMENU",

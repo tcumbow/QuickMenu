@@ -86,5 +86,6 @@ function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "esoui/art/menubar/gamepad/gp_playermenu_icon_character.dds", LeaveDisbandGroup)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToRM", "Travel To Reaper's March", "esoui/art/menubar/gamepad/gp_playermenu_icon_inventory.dds", TravelToRM)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "GroupUp", "Group Up", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", GroupUp)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveInstance", "Leave Instance", "esoui/art/lfg/gamepad/lfg_menuicon_battlegrounds.dds", ExitInstanceImmediately)
 
 end
