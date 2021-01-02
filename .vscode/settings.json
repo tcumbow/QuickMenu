@@ -177,7 +177,8 @@
         "IsUnitGrouped",
         "GroupLeave",
         "GroupDisband",
-        "IsUnitGroupLeader"
+        "IsUnitGroupLeader",
+        "Teleporter"
     ],
     "cSpell.words": [
         "ADDONMENU",
