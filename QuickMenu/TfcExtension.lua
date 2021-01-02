@@ -56,6 +56,10 @@ local function TravelToSpouse()
     JumpToFriend(GetSpouseName())
 end
 
+function TravelToRM()
+    Teleporter.sc_porting(382)
+end
+
 local function LeaveGroup()
 	if IsUnitGrouped("player") then
 		GroupLeave()
@@ -76,5 +80,6 @@ function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToLeader", "Travel To Group Leader", "esoui/art/unitframes/gamepad/gp_group_leader.dds", JumpToGroupLeader)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_contacts.dds", TravelToSpouse)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "esoui/art/menubar/gamepad/gp_playermenu_icon_character.dds", LeaveDisbandGroup)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToRM", "Travel To Reaper's March", "esoui/art/menubar/gamepad/gp_playermenu_icon_inventory.dds", TravelToRM)
 
 end

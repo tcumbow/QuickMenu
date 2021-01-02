@@ -20,11 +20,11 @@ QuickMenu.presets8 = {
  
 QuickMenu.presets12 = { 
 	slots = {
-		[1] = "TfcExtension(ReloadUI)",
-		[10] = "TfcExtension(DismissAllPets)",
+		[10] = "TfcExtension(ReloadUI)",
+		[9] = "TfcExtension(DismissAllPets)",
 		[5] = SI_MAIN_MENU_GROUP,
 		[6] = SI_MAIN_MENU_ACTIVITY_FINDER,
-		[9] = SI_MAIN_MENU_MAIL, --
+		[1] = "TfcExtension(TravelToRM)",
 		[7] = SI_JOURNAL_MENU_QUESTS,
 		[11] = SI_GAME_MENU_QUIT,
 		[3] = "TfcExtension(TravelToSpouse)",
