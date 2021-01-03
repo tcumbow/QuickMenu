@@ -60,6 +60,10 @@ function TravelToRM()
     Teleporter.sc_porting(382)
 end
 
+function TravelToER()
+    Teleporter.sc_porting(383)
+end
+
 local function LeaveGroup()
 	if IsUnitGrouped("player") then
 		GroupLeave()
@@ -85,6 +89,7 @@ function TfcQuickMenuExtraActions ()
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToSpouse", "Travel To Spouse", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_contacts.dds", TravelToSpouse)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveDisbandGroup", "Leave/Disband Group", "esoui/art/menubar/gamepad/gp_playermenu_icon_character.dds", LeaveDisbandGroup)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToRM", "Travel To Reaper's March", "esoui/art/menubar/gamepad/gp_playermenu_icon_inventory.dds", TravelToRM)
+    QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "TravelToER", "Travel To Grahtwood", "esoui/art/menubar/gamepad/gp_playermenu_icon_cadwell.dds", TravelToER)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "GroupUp", "Group Up", "EsoUI/Art/MenuBar/Gamepad/gp_playerMenu_icon_groups.dds", GroupUp)
     QuickMenu.RegisterGamepadMenuEntry("TfcExtension", "LeaveInstance", "Leave Instance", "esoui/art/lfg/gamepad/lfg_menuicon_battlegrounds.dds", ExitInstanceImmediately)
 
