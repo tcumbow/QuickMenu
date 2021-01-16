@@ -73,6 +73,7 @@ end
 local function LeaveDisbandGroup()
     if IsUnitGrouped("player") and IsUnitGroupLeader("player") then
         GroupDisband()
+        LeaveGroup()
     else
         LeaveGroup()
     end
